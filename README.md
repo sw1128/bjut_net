@@ -1,5 +1,7 @@
 # 北京工业大学（BJUT）校园网一键认证APP
 
+Github图片加载慢的话可以转到：[码云](https://gitee.com/swzzZ1/bjut_net)
+
 ## ✨ 关于APP
 
 用过校园网Wifi（就是那个CMCC_BJUT_SUSHE_XXX）的同志们都知道，北工大的校园网有多“人性化”
@@ -52,6 +54,6 @@
 
 https://wwuw.lanzouf.com/i58KX0pcyq8b
 
-## 如果觉得好用就打个赏吧♥
+## 如果觉得好用就点个star⭐吧，打个赏也可以♥
 
 <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net5.jpg" width="50%" height="50%" />
