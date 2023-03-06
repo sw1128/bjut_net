@@ -4,11 +4,11 @@ Github图片加载慢的话可以转到：[码云](https://gitee.com/swzzZ1/bjut
 
 ## ✨ 关于APP
 
-用过校园网Wifi（就是那个CMCC_BJUT_SUSHE_XXX）的同志们都知道，北工大的校园网有多“人性化”
+用过校园网WiFi（就是那个CMCC_BJUT_SUSHE_XXX）的同志们都知道，北工大的校园网有多“人性化”
 
 不仅要认证，还要认证两次，每次都要输账号密码，真是太方便了
 
-一级认证（连上Wifi之后自动弹出）：
+一级认证（连上WiFi之后自动弹出）：
 
 <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net1.jpg" width="50%" height="50%" />
 
@@ -45,6 +45,8 @@ Github图片加载慢的话可以转到：[码云](https://gitee.com/swzzZ1/bjut
 ### 第三步
 
 打开软件，输入学号和密码，点击一键认证，会有弹出提醒👇
+
+仅第一次使用需要手动输入，此后会保存输入记录
 
 <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net4.gif" width="50%" height="50%" />
 
