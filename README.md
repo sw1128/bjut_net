@@ -1,6 +1,6 @@
 # 北京工业大学（BJUT）校园网一键认证APP
 
-Github图片加载慢的话可以转到：[码云](https://gitee.com/swzzZ1/bjut_net)
+Github图片加载慢的话可以转到：[码云](https://gitee.com/swzzZ1/bjut_net) 或 [博客](https://zwhyzzz.top/bjut-net)
 
 ## ✨ 关于APP
 
