@@ -1,6 +1,10 @@
 # 北京工业大学（BJUT）校园网一键认证APP
 
-Github图片加载慢的话可以转到：[码云](https://gitee.com/swzzZ1/bjut_net) 或 [博客](https://zwhyzzz.top/bjut-net)
+Github图片加载慢的话可以转到：[博客](https://zwhyzzz.top/bjut-net)
+
+## 2022/06/13更新
+
+由于一级认证有略微改动，因此请在本文最后下载最新版本
 
 ## ✨ 关于APP
 
@@ -52,11 +56,10 @@ Github图片加载慢的话可以转到：[码云](https://gitee.com/swzzZ1/bjut
 
 <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net4.gif" width="50%" height="50%" />
 
-### 至此，校园网的两级认证就完成了
 
 ## 下载链接
 
-https://wwuw.lanzouf.com/i58KX0pcyq8b
+https://wwuw.lanzouj.com/iNln30z39jvi
 
 ## 如果觉得好用就点个star⭐吧，打个赏也可以♥
 
