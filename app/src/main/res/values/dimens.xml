@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="dialog_margin">18dp</dimen>
+    <dimen name="top_margin">30dp</dimen>
+</resources>

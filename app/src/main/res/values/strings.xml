@@ -2,4 +2,7 @@
     <string name="app_name">BJUT一键认证校园网</string>
     <string name="github"><a href='https://github.com/sw1128'>Github</a></string>
     <string name="reward">打赏♥</string>
+    <string name="notice">本App不会收集任何信息</string>
+    <string name="notice1">一切数据皆存储在本地手机设备内</string>
+    <string name="notice2">请放心使用 😊</string>
 </resources>

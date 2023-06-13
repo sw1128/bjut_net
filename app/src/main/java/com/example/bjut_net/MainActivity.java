@@ -3,8 +3,16 @@ package com.example.bjut_net;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaScannerConnection;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -20,6 +28,8 @@ import android.widget.Toast;
 import org.json.JSONObject;
 
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -27,6 +37,9 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -37,17 +50,86 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.item:
+                String msg = "① 连接到校园网\n----------------------\n② 连接成功后点击“直接使用此网络”\n※ 该步骤很重要，不然会认证无反应\n-----------------------\n③ 回到软件输入学号和密码\n【App会记住学号和密码，不用每次都重新输】\n-----------------------\n④ 点击一键认证\n-----------------------\n教程：\nhttps://zwhyzzz.top/bjut-net";
                 //弹出对话框
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("使用说明");
-                builder.setMessage("① 连接到校园网\n② 连接成功后点击“直接使用此网络”\n※ 该步骤很重要，不然会认证无反应\n③ 回到软件输入学号和密码\n【App会记住学号和密码，不用每次都重新输】\n④ 点击一键认证");
+                builder.setMessage(msg);
                 builder.setPositiveButton("确定",null);
                 builder.show();
+                break;
+            case R.id.item2:
+                showImageDialog2();
+                break;
+            case R.id.item3:
+                openWifiSettings();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
+    private void openWifiSettings() {
+        Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+        startActivity(intent);
+    }
+    private void showImageDialog() {
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_image, null);
+        ImageView imageView = dialogView.findViewById(R.id.imageView);
+        imageView.setImageResource(R.drawable.qr1);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setView(dialogView);
+        builder.setPositiveButton("保存到相册", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                Bitmap bitmap = drawable.getBitmap();
+                saveImageToGallery(bitmap);
+            }
+        });
+        builder.show();
+    }
 
+    private String generateUniqueFileName() {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
+        return "my_image_" + timeStamp + ".jpg";
+    }
+
+    private void saveImageToGallery(Bitmap bitmap) {
+        File directory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "MyApp");
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+        String fileName = generateUniqueFileName();
+        File file = new File(directory, fileName);
+
+        try {
+            FileOutputStream outputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            outputStream.flush();
+            outputStream.close();
+            MediaScannerConnection.scanFile(this, new String[]{file.getAbsolutePath()}, null, null);
+            Toast.makeText(MainActivity.this, "图片已保存到相册", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(MainActivity.this, "保存图片失败", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showImageDialog2() {
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_image, null);
+        ImageView imageView = dialogView.findViewById(R.id.imageView);
+        imageView.setImageResource(R.drawable.add); // 替换为您的图片资源
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setView(dialogView);
+        builder.setPositiveButton("保存到相册", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                Bitmap bitmap = drawable.getBitmap();
+                saveImageToGallery(bitmap);
+            }
+        });
+        builder.show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,19 +148,10 @@ public class MainActivity extends AppCompatActivity {
         TextView textView2 = findViewById(R.id.textView5);
         textView2.setMovementMethod(LinkMovementMethod.getInstance());
 
-        //隐藏ImageView
-        ImageView imageView = findViewById(R.id.qrcode);
-        imageView.setVisibility(View.INVISIBLE);
-
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //每次点击都会切换显示和隐藏
-                if (imageView.getVisibility() == View.VISIBLE) {
-                    imageView.setVisibility(View.INVISIBLE);
-                } else {
-                    imageView.setVisibility(View.VISIBLE);
-                }
+                showImageDialog();
             }
         });
 
@@ -104,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
 
         auth1();
-        auth2();
     }
 
     //认证
@@ -115,10 +187,14 @@ public class MainActivity extends AppCompatActivity {
         String passwordStr = password.getText().toString();
 
         new Thread(() -> {
-            String urlStr = "http://10.21.221.98:801/eportal/?c=Portal&a=login&login_method=1&user_account=%s@campus&user_password=%s";
+            String urlStr = "http://10.21.221.98:801/eportal/portal/login?callback=dr1003&login_method=1&user_account=,0,%s@campus&user_password=%s";
             urlStr = String.format(urlStr, usernameStr, passwordStr);
             Log.d("result111", urlStr);
-            networkRequest(urlStr);
+            boolean authSuccess = networkRequest(urlStr); // 通过返回值判断认证是否成功
+
+            if (authSuccess) {
+                auth2(); // 仅在一级认证成功时执行二级认证
+            }
         }).start();
     }
 
@@ -129,13 +205,13 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
-    private void networkRequest(String urlStr){
+    private boolean networkRequest(String urlStr){
         HttpURLConnection connection=null;
         try {
             URL url = new URL(urlStr);
             connection = (HttpURLConnection) url.openConnection();
-            connection.setConnectTimeout(3000);
-            connection.setReadTimeout(3000);
+            connection.setConnectTimeout(1000);
+            connection.setReadTimeout(1000);
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
             connection.setDoOutput(false);
@@ -147,21 +223,29 @@ public class MainActivity extends AppCompatActivity {
             String result = getStringByStream(connection.getInputStream()).split("\\(")[1].split("\\)")[0];
             String msg = new JSONObject(result).getString("msg");
             Log.d("result111", msg);
-            if (msg.equals("")) {
+            if (msg.contains("已经在线")) {
                 runOnUiThread(() -> {
-                    Toast.makeText(MainActivity.this, "一级认证已完成，请勿重复认证", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 });
-            } else if (msg.equals("认证成功")) {
+                return false;
+            } else if (msg.contains("认证成功")) {
                 runOnUiThread(() -> {
-                    Toast.makeText(MainActivity.this, "一级认证成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "一级认证成功！", Toast.LENGTH_SHORT).show();
                 });
+                return true;
             } else {
                 runOnUiThread(() -> {
-                    Toast.makeText(MainActivity.this, "一级认证失败，请检查学号或密码", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 });
+                return false;
             }
         } catch (Exception e) {
+            Log.d("result111", String.valueOf(e));
             e.printStackTrace();
+            runOnUiThread(() -> {
+                Toast.makeText(MainActivity.this, "请检查当前是否连接到校园网！", Toast.LENGTH_SHORT).show();
+            });
+            return false;
         }
     }
 
@@ -174,9 +258,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             URL url = new URL(urlStr);
             connection = (HttpURLConnection) url.openConnection();
-            connection.setConnectTimeout(3000);
-            connection.setReadTimeout(3000);
-            //设置请求方式 GET / POST 一定要大小
+            connection.setConnectTimeout(1000);
+            connection.setReadTimeout(1000);
             connection.setRequestMethod("POST");
             connection.setDoInput(true);
             connection.setDoOutput(false);
