@@ -2,6 +2,18 @@
 
 Github图片加载慢的话可以转到：[博客](https://zwhyzzz.top/bjut-net)
 
+## 2023/08/11更新
+
+添加了显示/隐藏密码功能
+
+## 2023/08/11更新
+
+创建了QQ交流群，欢迎加入
+
+## 2023/08/04更新
+
+添加了流量监控，优化了UI界面
+
 ## 2023/06/21更新
 
 为防止源码遭到恶意篡改，保障信息和数据安全，遂将源码删除
@@ -61,7 +73,7 @@ Github图片加载慢的话可以转到：[博客](https://zwhyzzz.top/bjut-net)
 
 ## 下载链接
 
-https://wwuw.lanzouj.com/iNln30z39jvi
+https://wwuw.lanzouj.com/iEOwM153pzza
 
 ## 如果觉得好用就点个star⭐吧，打个赏也可以♥
 
