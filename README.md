@@ -4,6 +4,10 @@ Github图片加载慢的话可以转到：[博客](https://zwhyzzz.top/bjut-net)
 
 ## 2023/08/11更新
 
+适配了最新的校园网认证过程
+
+## 2023/08/11更新
+
 添加了显示/隐藏密码功能
 
 ## 2023/08/05更新
@@ -73,7 +77,7 @@ Github图片加载慢的话可以转到：[博客](https://zwhyzzz.top/bjut-net)
 
 ## 下载链接
 
-https://wwuw.lanzouj.com/iEOwM153pzza
+https://wwuw.lanzouj.com/iOUkx15pr82j
 
 ## 如果觉得好用就点个star⭐吧，打个赏也可以♥
 
