@@ -1,56 +1,54 @@
-# 北京工业大学（BJUT）校园网一键认证APP
-
-Github图片加载慢的话可以转到：[博客](https://zwhyzzz.top/bjut-net)
-
-## 2023/08/18更新
-
-适配了最新的校园网认证过程
-
-## 2023/08/11更新
-
-添加了显示/隐藏密码功能
-
-## 2023/08/05更新
-
-创建了QQ交流群，欢迎加入
-
-## 2023/08/04更新
-
-添加了流量监控，优化了UI界面
-
-## 2023/06/21更新
-
-为防止源码遭到恶意篡改，保障信息和数据安全，遂将源码删除
-
-## 2023/06/13更新
-
-由于一级认证有略微改动，因此请在本文最后下载最新版本
+# 【Android】北京工业大学（BJUT）校园网助手
 
 ## ✨ 关于APP
 
-用过校园网WiFi（中蓝是CMCC_BJUT_SUSHE_XXX，其他校区估计也差不多）的同志们都知道
+给新来的同学讲一下背景：
 
-北工大的校园网不仅要认证，还要认证两次，每次都要输账号密码，非常麻烦
+北工大以前的校园网认证分为两个步骤：第一步是是入网认证，也就是红色页面的认证，第二步是出网认证，也就是我们耳熟能详的lgn蓝色页面的认证。由于经常会自动断开，而每次重新连接都要输两次账号密码，本人也饱受折磨，于是就开发了这个APP的前身——《BJUT一键认证校园网》。
 
-一级认证（连上WiFi之后自动弹出）：
+现在网信中心把两次认证合并成了一次，也能看到学校为了方便学生做出的努力，本人也在这里表示感谢。
 
-<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net1.jpg" width="50%" height="50%" />
+但是由于这个APP的用户也不少，拿某些同学的话来说就是 `尽管现在只需要认证一次，但是点几下屏幕也比手动输账号密码要方便`，所以我也没有放弃这个APP，在适配新的认证方式的同时，也加入了一些新的功能。
 
-二级认证（手动进入lgn）：
-
-<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net2.jpg" width="70%" height="70%" />
+正文开始 👇
 
 ## 🎄 APP功能
 
-连上WiFi后，一键认证，即可上网
+✅  [一键认证上网](#一键认证上网)
 
-下载链接放在最后，请务必先查看使用方法
+✅  [流量监控/预警](#lljk)
 
-【注意】安卓版本较低的机型可能无法打开APP
+✅  [APP内部版本更新](#APP内部版本更新)
+
+✅  [留言/反馈/建议](#ly)
+
+---
+
+### <center>一键认证上网
+
+<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_1.gif" width="40%" height="40%" />
+
+---
+
+### <center><span id=lljk>流量监控/预警</span>
+
+<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_4.jpg" width="40%" height="40%" />
+
+---
+
+### <center>APP内部版本更新
+
+<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_2.gif" width="40%" height="40%" />
+
+---
+
+### <center><span id="ly">留言/反馈/建议</span>
+
+<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_3.gif" width="40%" height="40%" />
 
 ## 📢 隐私声明
 
-本APP不会采集任何用户数据信息，请放心使用
+本APP不会收集任何信息，一切数据皆存储在本地手机设备内，请放心使用 😊
 
 ## 🔔 使用方法
 
@@ -58,27 +56,26 @@ Github图片加载慢的话可以转到：[博客](https://zwhyzzz.top/bjut-net)
 
 连接上校园网WiFi
 
-### 第二步 🆘此步骤很重要！！！
+### 第二步 🆘看这里！此步骤很重要！！
 
 以MIUI为例，等待自动弹出界面后点击右上角的 √
 
 其余机型点击“直接使用此网络”或类似提示
 
-<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net3.jpg" width="50%" height="50%" />
+<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net3.jpg" width="40%" height="40%" />
 
 ### 第三步
 
-打开软件，输入学号和密码，点击一键认证，会有弹出提醒👇
+打开软件，输入学号和密码，点击一键认证，会有弹出提醒（见 [一键认证上网](#一键认证上网)）
 
-仅第一次使用需要手动输入，此后会保存输入记录
-
-<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net4.gif" width="50%" height="50%" />
-
+ps：仅第一次使用需要手动输入，此后会保存上一次的输入记录
 
 ## 下载链接
 
-https://wwuw.lanzouj.com/iOUkx15pr82j
+https://wwuw.lanzouj.com/i4n4C16g6yqf
 
-## 如果觉得好用就点个star⭐吧，打个赏也可以♥
+---
+
+## <center>如果觉得好用就点个star⭐吧，打个赏也可以♥
 
 <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net5.jpg" width="50%" height="50%" />
