@@ -78,6 +78,10 @@ https://wwuw.lanzouj.com/i4n4C16g6yqf
 
 ---
 
-## <center>如果觉得好用就点个star⭐吧，打个赏也可以♥
+## 作者想说
+
+如果觉得好用就点个star⭐吧 （这个真的很重要，球球了 🙏） 
+
+打个赏也可以 （祝老板发财） ❤️
 
 <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net5.jpg" width="50%" height="50%" />
