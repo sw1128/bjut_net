@@ -64,7 +64,7 @@
 
 其余机型点击“直接使用此网络”或类似提示
 
-<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net3.jpg" width="40%" height="40%" />
+<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_5.jpg" width="40%" height="40%" />
 
 ### 第三步
 
