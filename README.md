@@ -1,5 +1,7 @@
 # 【Android】北京工业大学（BJUT）校园网助手
 
+图片加载慢可以转到 [博客](https://zwhyzzz.top/bjut-net-new/)
+
 ## ✨ 关于APP
 
 给新来的同学讲一下背景：
