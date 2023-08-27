@@ -60,11 +60,13 @@
 
 ### 第二步 🆘看这里！此步骤很重要！！
 
-以MIUI为例，等待自动弹出界面后点击右上角的 √
+以小米和荣耀手机为例，等待自动弹出界面后点击右上角的 ✔️ 或点击“直接使用此网络”
 
-其余机型点击“直接使用此网络”或类似提示
+其他品牌的手机与之类似
 
-<img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_5.jpg" width="40%" height="40%" />
+| 小米 | 荣耀 |
+| :--: | :--: |
+| <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_6.jpg"> | <img src="https://zwhy-1310134253.cos.ap-beijing.myqcloud.com/bjut_net_new_7.jpg"> |
 
 ### 第三步
 
